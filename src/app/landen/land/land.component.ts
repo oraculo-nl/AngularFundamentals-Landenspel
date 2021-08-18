@@ -15,7 +15,7 @@ export class UpdateLandComponent implements OnInit {
 
   public land: Land = new Land(0, '', '', '');
 
-  constructor(private route: ActivatedRoute, public landenLijstService: LandenLijstService) {
+  constructor(private route: ActivatedRoute, private landenLijstService: LandenLijstService) {
 
     this.formInstance = new FormGroup({
       id: new FormControl(''),
@@ -40,7 +40,6 @@ export class UpdateLandComponent implements OnInit {
   }
 
   update(): void {
-    console.log(this.formInstance.value);
     this.landenLijstService.updateLand(this.formInstance.value).subscribe(() => { });
   }
 

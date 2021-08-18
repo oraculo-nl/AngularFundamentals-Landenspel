@@ -1,0 +1,14 @@
+<h3>Nieuw land</h3>
+<form [formGroup]="formInstance">
+  <label>Land:</label>
+  <input name="naam" type="text" formControlName="naam">
+  <br><br>
+  <label>Code:</label>
+  <input name="code" formControlName="code">
+  <br><br>
+  <label>Munt:</label>
+  <input name="munt" formControlName="munt">
+  <br><br>
+  <button (click)="create()">Create</button>
+
+</form>
