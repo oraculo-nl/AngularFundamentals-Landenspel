@@ -7,30 +7,37 @@ import { Land } from '../domain/land';
 })
 export class LandenLijstService {
 
-  landen:Land[] = [new Land(1, 'Verenigde Staten','US','Dollar'),new Land(2, 'Nederland','NL','Euro'),
-  new Land(3, 'Verenigd Koninkrijk','UK','Pond')];
+  landen: Land[] = [new Land(1, 'Verenigde Staten', 'US', 'Dollar'), new Land(2, 'Nederland', 'NL', 'Euro'),
+  new Land(3, 'Verenigd Koninkrijk', 'UK', 'Pond')];
 
 
   constructor() { }
 
-  public getLanden() : Observable<Land[]>{
+  public getLanden(): Observable<Land[]> {
     return of(this.landen);
   }
 
-  public updateLand(land:Land):Observable<{}> {
+  public updateLand(land: Land): Observable<{}> {
     let index = this.landen.findIndex(l => l.id == land.id);
-    this.landen[index] = land;
+    if (index > -1) {
+      this.landen[index] = land;
+    }
     console.log(this.landen);
     return of({});
   }
 
-  public createLand(land:Land):Observable<{}> {
+  public createLand(land: Land): Observable<{}> {
     this.landen.push(land);
     return of({});
 
   }
 
-  public deleteLand(id:number):Observable<{}> {
+  public deleteLand(id: number): Observable<{}> {
+    console.log(id);
+    let index = this.landen.findIndex(l => l.id == id);
+    if (index > -1) {
+      this.landen.splice(index,1);
+    }
     return of({});
   }
 }
