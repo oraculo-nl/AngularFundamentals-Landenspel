@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandenComponent } from './landen/landen.component';
 import { KenJeLandComponent } from './ken-je-land/ken-je-land.component';
-import { LandComponent } from './land/land.component';
+import { LandComponent } from './landen/land/land.component';
 
 @NgModule({
   declarations: [
