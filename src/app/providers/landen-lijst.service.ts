@@ -7,8 +7,8 @@ import { Land } from '../domain/land';
 })
 export class LandenLijstService {
 
-  landen:Land[] = [new Land('Verenigde Staten','US','Dollar'),new Land('Nederland','NL','Euro'),
-  new Land('Verenigd Koninkrijk','UK','Pond')];
+  landen:Land[] = [new Land(1, 'Verenigde Staten','US','Dollar'),new Land(2, 'Nederland','NL','Euro'),
+  new Land(3, 'Verenigd Koninkrijk','UK','Pond')];
 
 
   constructor() { }
@@ -17,9 +17,11 @@ export class LandenLijstService {
     return of(this.landen);
   }
 
-  public updateLand(land:Land):Observable<Land> {
-    // foundLand = landen.find( landNaam => landNaam == land.naam)
-    return of(new Land('','',''));
+  public updateLand(land:Land):Observable<{}> {
+    let index = this.landen.findIndex(l => l.id == land.id);
+    this.landen[index] = land;
+    console.log(this.landen);
+    return of({});
   }
 
   public createLand(land:Land):Observable<{}> {

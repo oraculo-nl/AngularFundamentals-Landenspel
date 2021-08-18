@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { LandenComponent } from './landen/landen.component';
 import { KenJeLandComponent } from './ken-je-land/ken-je-land.component';
 import { UpdateLandComponent } from './landen/land/land.component';
-import { LandService } from './providers/land.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -17,9 +18,11 @@ import { LandService } from './providers/land.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [LandService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

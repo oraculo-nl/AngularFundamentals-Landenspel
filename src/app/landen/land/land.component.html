@@ -1,11 +1,15 @@
 <h3>Update land</h3>
-<label>Land:</label>
-<input [value]="land.naam">
-<br><br>
-<label>Code:</label>
-<input [value]="land.code">
-<br><br>
-<label>Munt:</label>
-<input [value]="land.munt">
-<br><br>
-<button>Update</button>
+<form [formGroup]="formInstance">
+  <input type=hidden name="id" formControlName="id">
+  <label>Land:</label>
+  <input name="naam" type="text" formControlName="naam">
+  <br><br>
+  <label>Code:</label>
+  <input name="code" formControlName="code">
+  <br><br>
+  <label>Munt:</label>
+  <input name="munt" formControlName="munt">
+  <br><br>
+  <button (click)="update()">Update</button>
+
+</form>

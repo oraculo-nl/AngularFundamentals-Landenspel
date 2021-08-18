@@ -1,5 +1,5 @@
 export class Land {
 
-  constructor(public naam:string, public code:string, public munt:string) {}
+  constructor(public id: number, public naam:string, public code:string, public munt:string) {}
 
 }
