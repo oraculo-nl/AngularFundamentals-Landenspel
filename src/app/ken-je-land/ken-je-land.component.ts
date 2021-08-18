@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Land } from '../domain/land';
+import { LandenLijstService } from '../providers/landen-lijst.service';
 
 @Component({
   selector: 'app-ken-je-land',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KenJeLandComponent implements OnInit {
 
-  constructor() { }
+  formInstance: FormGroup;
+  land: Land = new Land(0, '', '', '');
 
-  ngOnInit(): void {
+  constructor(private landenLijstService: LandenLijstService) {
+    this.formInstance = new FormGroup({
+      code: new FormControl(''),
+      munt: new FormControl('')
+    });
+
   }
 
+  ngOnInit(): void {
+    this.land = this.landenLijstService.getRandomLand();
+    console.log(this.land.id);
+
+  }
+
+  raad(): void {
+    console.log(this.land);
+  }
 }

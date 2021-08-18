@@ -33,4 +33,5 @@ export class LandenComponent implements OnInit {
   onCreate(): void {
     this.router.navigate(['/landen/create']);
   }
+
 }

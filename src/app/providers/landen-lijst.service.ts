@@ -39,4 +39,14 @@ export class LandenLijstService {
     }
     return of({});
   }
+
+  getRandomLand() : Land {
+    let land:Land;
+    let min = 0;
+    let max = this.landen.length-1;
+    let randomIndex =  Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+
+    return this.landen[randomIndex];
+  }
+
 }

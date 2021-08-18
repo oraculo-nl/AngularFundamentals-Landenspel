@@ -1,1 +1,14 @@
-<p>ken-je-land works!</p>
+<h3>Ken je land! Raadspel</h3>
+Raad de landcode en de munt van: {{land.naam}}
+<br><br>
+<form [formGroup]="formInstance">
+  <label>Code:</label>
+  <input name="code" formControlName="code">
+  <br><br>
+  <label>Munt:</label>
+  <input name="munt" formControlName="munt">
+  <br><br>
+  <button (click)="raad()">Raad</button>
+</form>
+
+
