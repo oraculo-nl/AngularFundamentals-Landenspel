@@ -41,7 +41,7 @@ export class UpdateLandComponent implements OnInit {
 
   update(): void {
     console.log(this.formInstance.value);
-    this.landenLijstService.updateLand(this.formInstance.value).subscribe(() => {console.log('done')});
+    this.landenLijstService.updateLand(this.formInstance.value).subscribe(() => { });
   }
 
 }

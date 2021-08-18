@@ -1,12 +1,13 @@
 <br>
 <table>
   <tr *ngFor="let land of landen">
-    <td><a [routerLink]='' (click)="onClick(land)">{{land.naam}}</a></td>
+    <td><a [routerLink]='' (click)="onUpdate(land)">{{land.naam}}</a></td>
     <td>{{land.code}}</td>
     <td>{{land.munt}}</td>
-    <td><button>delete</button></td>
+    <td><button (click)="onDelete(land.id)">delete</button></td>
   </tr>
 </table>
-
+<br>
+<button (click)="onCreate()">Nieuw land</button>
 
 <router-outlet></router-outlet>

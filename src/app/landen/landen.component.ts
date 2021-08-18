@@ -11,9 +11,9 @@ import { LandenLijstService } from '../providers/landen-lijst.service';
 export class LandenComponent implements OnInit {
 
 
-  landen:Land[] = [];
+  landen: Land[] = [];
 
-  constructor(private landenLijstService:LandenLijstService, private router:Router) {}
+  constructor(private landenLijstService: LandenLijstService, private router: Router) { }
 
   ngOnInit(): void {
     this.landenLijstService.getLanden().subscribe(
@@ -22,8 +22,15 @@ export class LandenComponent implements OnInit {
     )
   }
 
-  onClick(land:Land) :void {
-    this.router.navigate(['/landen/land'], {queryParams:{land: JSON.stringify(land)}});
+  onUpdate(land: Land): void {
+    this.router.navigate(['/landen/land'], { queryParams: { land: JSON.stringify(land) } });
   }
 
+  onDelete(id: number): void {
+    this.landenLijstService.deleteLand(id).subscribe(() => { });
+  }
+
+  onCreate(): void {
+    this.router.navigate(['/landen/create']);
+  }
 }

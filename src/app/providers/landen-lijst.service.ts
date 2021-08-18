@@ -30,8 +30,7 @@ export class LandenLijstService {
 
   }
 
-  public deleteLand(landNaam:string):Observable<{}> {
-    this.landen = this.landen.filter( land => land.naam != landNaam);
+  public deleteLand(id:number):Observable<{}> {
     return of({});
   }
 }
