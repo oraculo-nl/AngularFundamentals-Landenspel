@@ -1,0 +1,12 @@
+<br>
+<table>
+  <tr *ngFor="let land of landen">
+    <td><a [routerLink]="['/landen/land']">{{land.naam}}</a></td>
+    <td>{{land.code}}</td>
+    <td>{{land.munt}}</td>
+    <td><button>delete</button></td>
+  </tr>
+</table>
+
+
+<router-outlet></router-outlet>
