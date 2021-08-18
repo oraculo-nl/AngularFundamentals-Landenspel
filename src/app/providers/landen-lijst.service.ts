@@ -22,18 +22,17 @@ export class LandenLijstService {
     if (index > -1) {
       this.landen[index] = land;
     }
-    console.log(this.landen);
     return of({});
   }
 
   public createLand(land: Land): Observable<{}> {
+    land.id = this.landen.length + 1;
     this.landen.push(land);
     return of({});
 
   }
 
   public deleteLand(id: number): Observable<{}> {
-    console.log(id);
     let index = this.landen.findIndex(l => l.id == id);
     if (index > -1) {
       this.landen.splice(index,1);
