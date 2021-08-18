@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Land } from '../domain/land';
 
 
 /*
@@ -10,6 +11,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LandService {
+
+  public land: Land = new Land('','','');
 
   constructor() { }
 }

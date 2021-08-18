@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LandComponent } from './land.component';
+import { UpdateLandComponent } from './land.component';
 
 describe('LandComponent', () => {
-  let component: LandComponent;
-  let fixture: ComponentFixture<LandComponent>;
+  let component: UpdateLandComponent;
+  let fixture: ComponentFixture<UpdateLandComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LandComponent ]
+      declarations: [ UpdateLandComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LandComponent);
+    fixture = TestBed.createComponent(UpdateLandComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

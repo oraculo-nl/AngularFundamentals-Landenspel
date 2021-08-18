@@ -5,20 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandenComponent } from './landen/landen.component';
 import { KenJeLandComponent } from './ken-je-land/ken-je-land.component';
-import { LandComponent } from './landen/land/land.component';
+import { UpdateLandComponent } from './landen/land/land.component';
+import { LandService } from './providers/land.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandenComponent,
     KenJeLandComponent,
-    LandComponent
+    UpdateLandComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [LandService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
