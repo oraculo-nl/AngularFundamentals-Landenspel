@@ -7,8 +7,14 @@ import { Land } from '../domain/land';
 })
 export class LandenLijstService {
 
-  landen: Land[] = [new Land(1, 'Verenigde Staten', 'US', 'Dollar'), new Land(2, 'Nederland', 'NL', 'Euro'),
-  new Land(3, 'Verenigd Koninkrijk', 'UK', 'Pond')];
+  landen: Land[] = [new Land(1, 'Verenigde Staten', 'US', 'Dollar'),
+  new Land(2, 'Nederland', 'NL', 'Euro'),
+  new Land(3, 'Verenigd Koninkrijk', 'UK', 'Pond'),
+  new Land(2, 'Duitsland', 'DE', 'Euro'),
+  new Land(2, 'Frankrijk', 'FR', 'Euro'),
+  new Land(2, 'Rusland', 'RU', 'Roebel'),
+  new Land(2, 'China', 'CN', 'Renmenbi'),
+];
 
 
   constructor() { }
