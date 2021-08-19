@@ -12,6 +12,7 @@ export class KenJeLandComponent implements OnInit {
 
   formInstance: FormGroup;
   land: Land = new Land(0, '', '', '');
+  punten: number = 0;
 
   constructor(private landenLijstService: LandenLijstService) {
     this.formInstance = new FormGroup({
@@ -23,11 +24,14 @@ export class KenJeLandComponent implements OnInit {
 
   ngOnInit(): void {
     this.land = this.landenLijstService.getRandomLand();
-    console.log(this.land.id);
+
 
   }
 
   raad(): void {
-    console.log(this.land);
+    if (this.formInstance.value.code == this.land.code && this.formInstance.value.munt == this.land.munt) {
+      this.punten++;
+    }
+
   }
 }
