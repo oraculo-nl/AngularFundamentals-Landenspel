@@ -48,11 +48,15 @@ export class LandenLijstService {
 
   getRandomLand() : Land {
     let land:Land;
-    let min = 0;
-    let max = this.landen.length-1;
-    let randomIndex =  Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+    let min = 1;
+    let max = this.landen.length;
+    let randomIndex =  this.getRndInteger(min, max);
 
     return this.landen[randomIndex];
   }
 
+  //This JavaScript function always returns a random number between min (included) and max (excluded):
+  getRndInteger(min: number, max: number) {
+    return Math.floor(Math.random() * (max - min) ) + min;
+  }
 }

@@ -13,6 +13,7 @@ export class KenJeLandComponent implements OnInit {
   formInstance: FormGroup;
   land: Land = new Land(0, '', '', '');
   punten: number = 0;
+  message: string = "";
 
   constructor(private landenLijstService: LandenLijstService) {
     this.formInstance = new FormGroup({
@@ -31,6 +32,11 @@ export class KenJeLandComponent implements OnInit {
   raad(): void {
     if (this.formInstance.value.code == this.land.code && this.formInstance.value.munt == this.land.munt) {
       this.punten++;
+      this.message = "Goed geraden!";
+      this.formInstance.reset();
+      this.land = this.landenLijstService.getRandomLand();
+    } else {
+      this.message = "Fout!"
     }
 
   }
